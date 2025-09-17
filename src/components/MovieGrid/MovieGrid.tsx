@@ -1,10 +1,5 @@
 import css from "./MovieGrid.module.css";
-
-interface Movie {
-  id : number;
-  title: string;
-  poster_path: string;
-}
+import { type Movie } from "../../types/movie"; 
 
 interface MovieGridProps {
   movies: Movie[];
@@ -12,9 +7,10 @@ interface MovieGridProps {
 }
 
 export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
-  if (movies.length === 0){
+  if (movies.length === 0) {
     return null;
   }
+
   return (
     <ul className={css.grid}>
       {movies.map((movie) => (

@@ -1,4 +1,4 @@
-import styles from "./SearchBar.module.css";
+import styles from './SearchBar.module.css'
 import { toast } from "react-hot-toast";
 
 type SearchProp= {
@@ -10,7 +10,9 @@ export default function SearchBar({ onSubmit }: SearchProp) {
     const value = query?.trim() || '';
 
     if (value === "") {
-      toast.error("Please enter your search query.");
+    toast.error("Please enter your search query.", {
+    position: "top-center",
+});
       return;
     }
 
